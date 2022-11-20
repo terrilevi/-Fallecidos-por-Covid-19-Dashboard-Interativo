@@ -12,3 +12,5 @@ st.write('My favorite color is', color)
 color = st.color_picker('Pick A Color', '#00f900')
 st.write('The current color is', color)
 
+
+st.title('WORLD CUP')
