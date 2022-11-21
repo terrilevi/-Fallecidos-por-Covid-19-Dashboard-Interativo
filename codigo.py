@@ -1,25 +1,22 @@
 import streamlit as st 
 import pandas as pd
 import numpy as np
+import gdown
 
-st.title('Titulo')
+st.title('Fallecidos por COVID19')
 
-color = st.select_slider(
-    'Select a color of the rainbow',
-    options=['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'])
-st.write('My favorite color is', color)
+# id = 1dSRlbtutz10Lgb4wiYPcWaK3w5QMUH8O
+@st.experimental_memo
+def download_data():
+    #https://drive.google.com/uc?id=YOURFILEID\
+    url = "https://drive.google.com/uc?id=1dSRlbtutz10Lgb4wiYPcWaK3w5QMUH8O"
+    output = 'data.csv'
+    gdown.download(url,output,quiet = False)
 
-color = st.color_picker('Pick A Color', '#00f900')
-st.write('The current color is', color)
 
-
-st.title('WORLD CUP')
-st.title('morgan freeman mundial')
-st.title('JUNGCOCK')
-
-st.title('hola anto')
-
-st.code(""" pene con pene """)
-
-st.code(""" hijos de perra """)
-
+download_data()
+#vamos a sacar el primer millon de datos:
+data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CORTE', 'FECHA RESULTADO'])
+st.dataframe(data.head(20))
+edades= data['EDAD']
+st.line_chart(edades)
