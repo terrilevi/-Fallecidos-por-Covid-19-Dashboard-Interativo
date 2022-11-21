@@ -47,5 +47,5 @@ st.write(sexo)
 st.write(departamento)
 opcion_departamento = st.selectbox('Selecciona un departamento:', departamento)
 
-number = st.number_input('Ingrese un numro')
+number = st.number_input('Ingrese un numero')
 st.write('El numero es ', number)
