@@ -6,11 +6,11 @@ from streamlit_option_menu import option_menu
 
 st.title('Fallecidos por COVID19')
 
-with st.sidebar:
-    selected = option_menu(
-        menu_tittle="Menú Principal",
-        options= ["Inicio", "Fallecidos", "Prueba", "Integrantes"],
-    )
+#with st.sidebar:
+ #   selected = option_menu(
+  #      menu_tittle="Menú Principal",
+   #     options= ["Inicio", "Fallecidos", "Prueba", "Integrantes"],
+    #)
 
 
 # id = 1dSRlbtutz10Lgb4wiYPcWaK3w5QMUH8O
