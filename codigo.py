@@ -28,8 +28,8 @@ edad= df['EDAD_DECLARADA'].unique().tolist()
 
 #crear un slider de edad
 edad_selector = st.slider('Edad del fallecido: ',
-                          min_value = min(edad)
-                          max_value = max(edad)
+                          min_value = min(edad),
+                          max_value = max(edad),
                           value = (min(edad), max(edad)))
 
 
