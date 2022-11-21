@@ -23,9 +23,9 @@ data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CO
 st.dataframe(data.head(5))
 
 
-edad= data['EDAD_DECLARADA']
+#edad= data['EDAD_DECLARADA']
 #edad= df['EDAD_DECLARADA'].unique().tolist()
-#edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())
+edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())
 
 #crear un slider de edad
 edad_selector = st.slider('Edad del fallecido: ',
