@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import gdown
-from streamlit_option_menu import option_menu
+
 
 st.title('Fallecidos por COVID19')
 
