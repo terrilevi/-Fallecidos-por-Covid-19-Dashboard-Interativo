@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.title('Titulo del Proyecto')
+st.title('Titulo')
 
 color = st.select_slider(
     'Select a color of the rainbow',
