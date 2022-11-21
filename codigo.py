@@ -13,7 +13,12 @@ def download_data():
     output = 'data.csv'
     gdown.download(url,output,quiet = False)
 
-
+with st.sidebar:
+    selected = option_menu(
+        menu_title= 'Menú principal',
+        options = ['Inicio', 'Miembros', 'Dataset','Suwis'],
+        default_index=0,
+    )
 download_data()
 #vamos a sacar el primer millon de datos:
 data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CORTE', 'FECHA_FALLECIMIENTO'])
