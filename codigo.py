@@ -16,7 +16,7 @@ def download_data():
 
 download_data()
 #vamos a sacar el primer millon de datos:
-data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CORTE', 'FECHA RESULTADO'])
+data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CORTE', 'FECHA_FALLECIMIENTO'])
 st.dataframe(data.head(20))
 edades= data['EDAD']
 st.line_chart(edades)
