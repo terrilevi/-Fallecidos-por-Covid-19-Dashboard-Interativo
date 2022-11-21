@@ -21,5 +21,20 @@ download_data()
 #vamos a sacar el primer millon de datos:
 data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CORTE', 'FECHA_FALLECIMIENTO'])
 st.dataframe(data.head(5))
-edades= data['EDAD_DECLARADA']
-st.line_chart(edades)
+
+
+#edades= data['EDAD_DECLARADA']
+edad= df['EDAD_DECLARADA'].unique().tolist()
+
+#crear un slider de edad
+edad_selector = st.slider('Edad del fallecido: ',
+                          min_value = min(edad)
+                          max_value = max(edad)
+                          value = (min(edad), max(edad)))
+
+
+
+
+
+
+
