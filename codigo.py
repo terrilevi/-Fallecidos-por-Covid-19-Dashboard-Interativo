@@ -29,6 +29,8 @@ st.dataframe(data.head(20))
 #sexo = np.sort(df['SEXO'].dropna().unique())
 
 edad= data['EDAD_DECLARADA']
+sexo= data['SEXO']
+
 #edad= df['EDAD_DECLARADA'].unique().tolist()
 #edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())
 
@@ -39,7 +41,7 @@ edad_selector = st.slider('Edad del fallecido: ',
                          value = (min(edad), max(edad)))
 
 
-
+ciudad_selector = st.multiselect('SEXO', sexo, default = ciudad)
 
 
 
