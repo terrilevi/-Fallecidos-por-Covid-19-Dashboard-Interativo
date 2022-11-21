@@ -6,6 +6,8 @@ import gdown
 
 st.title('Fallecidos por COVID19')
 
+st.title('Fallecidos por COVID19')
+
 
 # id = 1dSRlbtutz10Lgb4wiYPcWaK3w5QMUH8O
 @st.experimental_memo
