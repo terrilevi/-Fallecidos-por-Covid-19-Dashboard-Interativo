@@ -41,7 +41,7 @@ edad_selector = st.slider('Edad del fallecido: ',
                          value = (min(edad), max(edad)))
 
 
-ciudad_selector = st.multiselect('SEXO', sexo, default = ciudad)
+#sexo_selector = st.multiselect('SEXO', sexo, default = ciudad)
 
 
 
