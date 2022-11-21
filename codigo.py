@@ -30,6 +30,7 @@ st.dataframe(data.head(20))
 
 edad= data['EDAD_DECLARADA']
 sexo= data['SEXO']
+departamento= data['DEPARTAMENTO']
 
 #edad= df['EDAD_DECLARADA'].unique().tolist()
 #edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())
@@ -43,6 +44,7 @@ edad_selector = st.slider('Edad del fallecido: ',
 
 #sexo_selector = st.multiselect('SEXO:', sexo, default = ciudad)
 st.write(sexo)
+st.write(departamentos)
 
 
 
