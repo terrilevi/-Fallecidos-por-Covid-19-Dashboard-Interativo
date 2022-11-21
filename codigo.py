@@ -45,7 +45,7 @@ edad_selector = st.slider('Edad del fallecido: ',
 #sexo_selector = st.multiselect('SEXO:', sexo, default = ciudad)
 st.write(sexo)
 st.write(departamento)
-opcion_departamento = st.selectbox('Selecciona una departamento:', departamento)
+opcion_departamento = st.selectbox('Selecciona un departamento:', departamento)
 
 number = st.number_input('Ingrese un numro')
 st.write('El numero es ', number)
