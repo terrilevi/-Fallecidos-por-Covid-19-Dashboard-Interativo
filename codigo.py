@@ -22,7 +22,7 @@ download_data()
 data = pd.read_csv('data.csv', sep = ';', nrows=1000000, parse_dates= ['FECHA_CORTE', 'FECHA_FALLECIMIENTO'])
 
 df = df.drop(columns = ["FECHA_CORTE","FECHA_FALLECIMIENTO","EDAD_DECLARADA","SEXO", "CLASIFICACION_DEF", 
-                        "DEPARTAMENTO", "PROVINCIA", "DISTRITO", "UBIGEO", "UUID])
+                        "DEPARTAMENTO", "PROVINCIA", "DISTRITO", "UBIGEO", "UUID"])
 
 
 edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())          
