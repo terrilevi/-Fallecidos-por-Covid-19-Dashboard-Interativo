@@ -21,22 +21,22 @@ def download_data():
 download_data()
 #vamos a sacar el primer millon de datos:
 data = pd.read_csv('data.csv', sep = ';', parse_dates= ['FECHA_CORTE', 'FECHA_FALLECIMIENTO'])
+st.datafrane(data.head(20))
+#df = df.drop(columns = ["FECHA_CORTE","FECHA_FALLECIMIENTO","EDAD_DECLARADA","SEXO", "CLASIFICACION_DEF", "DEPARTAMENTO", "PROVINCIA", "DISTRITO", "UBIGEO", "UUID"])
 
-df = df.drop(columns = ["FECHA_CORTE","FECHA_FALLECIMIENTO","EDAD_DECLARADA","SEXO", "CLASIFICACION_DEF", "DEPARTAMENTO", "PROVINCIA", "DISTRITO", "UBIGEO", "UUID"])
 
+#edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())          
+#sexo = np.sort(df['SEXO'].dropna().unique())
 
-edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())          
-sexo = np.sort(df['SEXO'].dropna().unique())
-
-#edad= data['EDAD_DECLARADA']
+edad= data['EDAD_DECLARADA']
 #edad= df['EDAD_DECLARADA'].unique().tolist()
 #edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())
 
 #crear un slider de edad
-#edad_selector = st.slider('Edad del fallecido: ',
- #                         min_value = min(edad),
-  #                        max_value = max(edad),
-   #                       value = (min(edad), max(edad)))
+edad_selector = st.slider('Edad del fallecido: ',
+                         min_value = min(edad),
+                         max_value = max(edad),
+                         value = (min(edad), max(edad)))
 
 
 
