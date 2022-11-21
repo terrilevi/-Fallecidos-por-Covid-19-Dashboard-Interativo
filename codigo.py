@@ -44,7 +44,7 @@ edad_selector = st.slider('Edad del fallecido: ',
 
 #sexo_selector = st.multiselect('SEXO:', sexo, default = ciudad)
 st.write(sexo)
-st.write(departamentos)
+st.write(departamento)
 
 
 
