@@ -30,7 +30,7 @@ st.dataframe(data.head(20))
 
 edad= data['EDAD_DECLARADA']
 sexo= data['SEXO']
-departamento= data['DEPARTAMENTO']
+departamento= data['DEPARTAMENTO'].unique()
 
 #edad= df['EDAD_DECLARADA'].unique().tolist()
 #edad = np.sort(df['EDAD_DECLARADA'].dropna().unique())
