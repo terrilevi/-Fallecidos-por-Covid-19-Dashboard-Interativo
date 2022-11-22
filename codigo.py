@@ -5,7 +5,6 @@ import gdown
 import os
 
 
-st.title('Fallecidos por COVID19')
 
 st.title('Fallecidos por COVID19')
 
