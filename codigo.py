@@ -7,6 +7,13 @@ import os
 
 
 st.title('Fallecidos por COVID19')
+st.title('Fallecidos por COVID19')
+st.title('Fallecidos por COVID19')
+st.title('Fallecidos por hola')
+
+st.title('Fallecidos por COVID19')
+st.title('Fallecidos por COVID19')
+
 
 
 # id = 1dSRlbtutz10Lgb4wiYPcWaK3w5QMUH8O
