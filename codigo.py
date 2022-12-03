@@ -42,7 +42,8 @@ st.write('Fallecidos por COVID-19 en mujeres y varones:')
 #Contabilizador de cada registro segun sexo en el DataSet:
 st.code(data["SEXO"].value_counts())
 st.sidebar.markdown('**Fallecidos por COVID - 19 Dashboard**  ')
-st.sidebar.markdown('Filtros para visualizar datos en los 4 graficos:  ')
+st.sidebar.markdown('Filtros de ubicación geográfica:  ')
+st.sidebar.caption('Habilitados para el apartado **Visualización de gráficos según filtros de ubicación geográfica** ')
 
 #Creacion de un slider de fechas:
 opcion_fecha = st.slider(
