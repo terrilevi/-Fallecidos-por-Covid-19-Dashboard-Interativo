@@ -33,6 +33,7 @@ data["CLASIFICACION_DEF"] = data.CLASIFICACION_DEF.map(
 st.title(' Fallecidos por COVID - 19 Dashboard ')
 st.header("DataSet de Fallecidos por COVID-19")
 st.write("Es el registro diario de muertes por Covid-19. Cada registro es igual a una persona, la cual puede caracterizarse por sexo, edad y ubicación geográfica hasta nivel de distrito; y el código UBIGEO.")
+st.write("Todos los datos fueron recolectados de: https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa")
 #DataSet de Fallecidos:
 st.write(data)
 st.write('Fallecidos en el Perú por COVID-19:')
@@ -41,6 +42,7 @@ st.code(data["SEXO"].count())
 st.write('Fallecidos por COVID-19 en mujeres y varones:')
 #Contabilizador de cada registro segun sexo en el DataSet:
 st.code(data["SEXO"].value_counts())
+#st.code(data["SEXO"].value_counts())
 st.sidebar.markdown('**Fallecidos por COVID - 19 Dashboard**  ')
 st.sidebar.markdown('Filtros de ubicación geográfica:  ')
 st.sidebar.caption('Habilitados para el apartado **Visualización de gráficos según filtros de ubicación geográfica** ')
@@ -113,9 +115,13 @@ pie_chart = px.pie(data_criterio,
                    values = 'CLASIFICACION_DEF',
                    names = 'CLASIFICACION_DEF') 
 col4.plotly_chart(pie_chart) 
-
-
-
+st.caption("Criterio virológico: Muerte en un caso confirmado de COVID-19 que fallece en los 60 días posteriores a una prueba molecular (PCR) o antigénica reactiva para SARS-CoV-2.")
+st.caption("Criterio serológico: Muerte en un caso confirmado de COVID-19 que fallece en los 60 días posteriores a una prueba serológica positiva IgM o IgM/IgG para SARS-CoV-2.")
+st.caption("Criterio radiológico: Muerte en un caso probable de COVID-19 que presenta una imagen radiológica, tomográfica o de resonancia magnética nuclear compatible con neumonía COVID-19.")
+st.caption("Criterio nexo epidemiológico: Muerte en un caso probable de COVID-19 que presenta nexo epidemiológico con un caso confirmado de COVID-19.")
+st.caption("Criterio investigación epidemiológica: Muerte en un caso sospechoso de COVID-19 que es verificado por investigación epidemiológica de la Red Nacional de Epidemiología (RENACE).")
+st.caption("Criterio clínico: Muerte en un caso sospechoso de COVID-19 que presenta cuadro clínico compatible con la enfermedad.")
+st.caption("Criterio SINADEF: Muerte con certificado de defunción en el que se presenta el diagnóstico de COVID-19 como causa de la muerte.  El fallecimiento por COVID-19 en el certificado de defunción está definido por la presencia en los campos A, B, C o D de los códigos CIE-10: U071, U072, B342, B972, o la mención de los términos “coronavirus”, “cov-2”, “cov2”, “covid” y “sars”.")
 ################################
 st.header(f"Visualización de la cantidad de muertos por fechas según un criterio")
 #Crear un selector de criterios:
