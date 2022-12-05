@@ -19,6 +19,19 @@ download_data()
 data = pd.read_csv('data.csv', sep = ';', parse_dates= ['FECHA_CORTE' , 'FECHA_FALLECIMIENTO'])
 data = data[["FECHA_CORTE","FECHA_FALLECIMIENTO","EDAD_DECLARADA","SEXO", "CLASIFICACION_DEF", "DEPARTAMENTO", "PROVINCIA", "DISTRITO", "UBIGEO", "UUID"]]
 #Correción de mala lectura de tildes:
+data["PROVINCIA"] = data.PROVINCIA.map(
+        {"MARAÃƒÂ‘ON":"MARAÑON",
+         "CAÃƒÂ‘ETE" : "CAÑETE",
+         "FERREÃƒÂ‘AFE" : "FERREÃƒÂ‘AFE"})
+data["DISTRITO"] = data.DISTRITO.map(
+        {"ENCAÃƒÂ‘ADA":"ENCAÑADA",
+        "FERREÃƒÂ‘AFE":"FERREÑAFE",
+        "NEPEÃƒÂ‘A":"NEPEÑA",
+        "PARIÃƒÂ‘AS":"PARIÑAS",
+        "BREÃƒÂ‘A":"BREÑA",
+        "CAÃƒÂ‘ARIS":"CAÑARIS"
+        "LOS BAÃƒÂ‘OS DEL INCA":"LOS BAÑOS DEL INCA"})         
+    
 data["CLASIFICACION_DEF"] = data.CLASIFICACION_DEF.map(
         {"Criterio SINADEF":"Criterio SINADEF",
         "Criterio virolÃ³gico":"Criterio virológico",
