@@ -97,6 +97,7 @@ col9.caption('Fallecidos por COVID-19 según el criterio:')
 col10.caption('Fallecidos por COVID-19 según el criterio:')
 
 #Creacion de 4 graficos:
+
 #Creacion de un grafico de barras segun el sexo:
 data_sexo = data_distrito.SEXO.value_counts()
 graph1 = col1.bar_chart(data_sexo)
@@ -111,10 +112,13 @@ chart_data = pd.DataFrame(data_criterio)
 col3.line_chart(chart_data)
 
 #Creacion de un grafico circular segun el criterio:
-pie_chart = px.pie(data_criterio, 
-                   values = 'CLASIFICACION_DEF',
+df_crits = data.groupby(['CLASIFICACION_DEF'], as_index = False)[['DEPARTAMENTO']].count() 
+pie_chart = px.pie(df_crits,
+                   values = 'DEPARTAMENTO',
                    names = 'CLASIFICACION_DEF') 
+
 col4.plotly_chart(pie_chart) 
+
 st.caption("Criterio virológico: Muerte en un caso confirmado de COVID-19 que fallece en los 60 días posteriores a una prueba molecular (PCR) o antigénica reactiva para SARS-CoV-2.")
 st.caption("Criterio serológico: Muerte en un caso confirmado de COVID-19 que fallece en los 60 días posteriores a una prueba serológica positiva IgM o IgM/IgG para SARS-CoV-2.")
 st.caption("Criterio radiológico: Muerte en un caso probable de COVID-19 que presenta una imagen radiológica, tomográfica o de resonancia magnética nuclear compatible con neumonía COVID-19.")
@@ -201,3 +205,7 @@ if page == 'Mostrar mapa':
     st.map(data1)
 else:
     st.write("")
+
+
+
+
