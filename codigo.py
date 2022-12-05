@@ -110,10 +110,11 @@ graph2 = col2.bar_chart(data_edad)
 data_criterio = data_distrito.CLASIFICACION_DEF.value_counts()
 chart_data = pd.DataFrame(data_criterio)
 col3.line_chart(chart_data)
-
+data['FALLECIDOS'] = data['UUID']
 #Creacion de un grafico circular segun el criterio:
-df_crits = data.groupby(['CLASIFICACION_DEF'], as_index = False)[['DEPARTAMENTO']].count() 
+df_crits = data.groupby(['CLASIFICACION_DEF'], as_index = False)[['FALLECIDOS']].count() 
 pie_chart = px.pie(df_crits,
+                   values = 'FALLECIDOS',
                    names = 'CLASIFICACION_DEF') 
 col4.plotly_chart(pie_chart) 
 
