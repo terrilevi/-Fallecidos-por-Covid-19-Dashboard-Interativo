@@ -114,7 +114,7 @@ col3.line_chart(chart_data)
 #Creacion de un grafico circular segun el criterio:
 df_crits = data.groupby(['CLASIFICACION_DEF'], as_index = False)[['DEPARTAMENTO']].count() 
 pie_chart = px.pie(df_crits,
-                   values = 'DEPARTAMENTO',
+                   values = 'xd',
                    names = 'CLASIFICACION_DEF') 
 col4.plotly_chart(pie_chart) 
 
