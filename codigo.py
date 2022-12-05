@@ -116,7 +116,6 @@ df_crits = data.groupby(['CLASIFICACION_DEF'], as_index = False)[['DEPARTAMENTO'
 pie_chart = px.pie(df_crits,
                    values = 'DEPARTAMENTO',
                    names = 'CLASIFICACION_DEF') 
-
 col4.plotly_chart(pie_chart) 
 
 st.caption("Criterio virológico: Muerte en un caso confirmado de COVID-19 que fallece en los 60 días posteriores a una prueba molecular (PCR) o antigénica reactiva para SARS-CoV-2.")
